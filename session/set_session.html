@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Session</title>
+</head>
+<body>
+    <h2>Set Session Data</h2>
+    <form action="session_example.php" method="POST">
+        <label>Username: <input type="text" name="username" required></label><br><br>
+        <label>Role:
+            <select name="role">
+                <option value="Admin">Admin</option>
+                <option value="Editor">Editor</option>
+                <option value="User">User</option>
+            </select>
+        </label><br><br>
+        <button type="submit">Set Session</button>
+    </form>
+</body>
+</html>

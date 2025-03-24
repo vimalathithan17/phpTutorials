@@ -1,0 +1,21 @@
+Constant	            Value	Description
+PHP_SESSION_NONE	    1	No active session
+PHP_SESSION_DISABLED	0	Sessions are disabled
+PHP_SESSION_ACTIVE	    2	Session is active
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+Function	                Description
+session_start()	            Starts or resumes a session.
+session_id()	            Gets or sets the session ID.
+session_name()	            Gets or sets the session name.
+session_destroy()	        Deletes all session data.
+session_unset()	            Removes all session variables but keeps the session active.
+session_regenerate_id(true)	Creates a new session ID (prevents fixation attacks).
+session_status()	        Checks if a session is active.
+session_set_cookie_params
+($lifetime, $path, $domain,
+ $secure, $httponly)	    Configures session cookie settings.
+session_get_cookie_params()	Gets the session cookie parameters.

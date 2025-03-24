@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL-Encoded Data Example</title>
+    <script>
+        function sendFormAJAX(event) {
+            event.preventDefault(); // Prevent normal form submission
+
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            // Create URL-encoded string (key=value&key=value)
+            let urlEncodedData = `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
+
+            fetch("url_encode.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: urlEncodedData
+            })
+            .then(response => response.json()) // Parse JSON response
+            .then(data => {
+                document.getElementById("response").innerHTML = `<strong>Server Response:</strong> ${data.message}`;
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</head>
+<body>
+    <h2>Login Form (URL-Encoded)</h2>
+
+    <!-- Non-AJAX form submission -->
+    <form action="url_encoded.php" method="POST">
+        <label>Username:</label>
+        <input type="text" name="username" required><br><br>
+
+        <label>Password:</label>
+        <input type="password" name="password" required><br><br>
+
+        <button type="submit">Submit (Non-AJAX)</button>
+    </form>
+
+    <hr>
+
+    <!-- AJAX Form -->
+    <form onsubmit="sendFormAJAX(event)">
+        <label>Username:</label>
+        <input type="text" id="username" required><br><br>
+
+        <label>Password:</label>
+        <input type="password" id="password" required><br><br>
+
+        <button type="submit">Submit (AJAX)</button>
+    </form>
+
+    <h3 id="response"></h3> <!-- Area to display response -->
+</body>
+</html>

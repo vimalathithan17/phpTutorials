@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Handles PHP Redirect</title>
+    <script>
+        function requestRedirect() {
+            fetch("redirect.php")
+            .then(response => {
+                if (response.status === 302) {  // PHP returned a redirect
+                    let locationHeader = response.headers.get("Location");
+                    if (locationHeader) {
+                        window.location.href = locationHeader; // Redirect manually
+                    } else {
+                        console.error("Redirect URL not found!");
+                    }
+                } else {
+                    return response.json(); // Handle normal JSON response
+                }
+            })
+            .then(data => {
+                if (data) {
+                    console.log("Server Response:", data);
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</head>
+<body>
+    <h2>Click to Request Redirect</h2>
+    <button onclick="requestRedirect()">Go to Redirect Page</button>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Demo</title>
+    <script>
+        function sendRequest() {
+            // Get input values
+            let name = document.getElementById("name").value;
+            let message = document.getElementById("message").value;
+
+            // Create FormData object
+            let formData = new FormData();
+            formData.append("name", name);
+            formData.append("message", message);
+
+            // Send AJAX request using fetch API
+            fetch("handle_form.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())  // Parse JSON response
+            .then(data => {
+                // Display server response
+                document.getElementById("response").innerHTML = 
+                    `<strong>Server Response:</strong> ${data.message}`;
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</head>
+<body>
+    <h2>AJAX Form Submission</h2>
+    <label>Name:</label>
+    <input type="text" id="name"><br><br>
+
+    <label>Message:</label>
+    <input type="text" id="message"><br><br>
+
+    <button onclick="sendRequest()">Send AJAX Request</button>
+
+    <h3 id="response"></h3> <!-- Area to display response -->
+</body>
+</html>

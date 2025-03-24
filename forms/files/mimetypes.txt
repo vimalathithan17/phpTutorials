@@ -1,0 +1,40 @@
+Image File Types
+
+File Type	MIME Type
+JPEG	    image/jpeg
+PNG	        image/png
+GIF	        image/gif
+BMP	        image/bmp
+WebP	    image/webp
+SVG	        image/svg+xml
+
+Document File Types
+
+File Type	     MIME Type
+PDF	             application/pdf
+Word (DOC)	     application/msword
+Word (DOCX)	     application/vnd.openxmlformats-officedocument.wordprocessingml.document
+Excel (XLS)	     application/vnd.ms-excel
+Excel (XLSX)	 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+PowerPoint(PPT)  application/vnd.ms-powerpoint
+PowerPoint(PPTX) application/vnd.openxmlformats-officedocument.presentationml.presentation
+Text (TXT)	     text/plain
+CSV	             text/csv
+
+Audio & Video File Types
+
+File Type	MIME Type
+MP3	        audio/mpeg
+WAV	        audio/wav
+MP4	        video/mp4
+AVI	        video/x-msvideo
+WebM	    video/webm
+
+Compressed & Executable File Types
+
+File Type	MIME Type
+ZIP	        application/zip
+RAR	        application/vnd.rar
+GZIP	    application/gzip
+TAR	        application/x-tar
+EXE	        application/x-msdownload

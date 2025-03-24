@@ -1,0 +1,14 @@
+fseek(resource $handle, int $offset, int $whence = SEEK_SET): int
+
+Parameters:
+Parameter	Type	    Description
+$handle	    resource	A valid file handle returned by fopen()
+$offset	    int	        The number of bytes to move the pointer
+$whence	    int         (optional)	Specifies how $offset is interpreted (default: SEEK_SET)
+
+
+Possible $whence Values
+Constant	Value	Meaning
+SEEK_SET	0	Moves the pointer to $offset bytes from the start of the file
+SEEK_CUR	1	Moves the pointer $offset bytes from the current position
+SEEK_END	2	Moves the pointer $offset bytes from the end of the file (negative values go backward)

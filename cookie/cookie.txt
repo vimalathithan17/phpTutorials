@@ -1,0 +1,26 @@
+Syntax:
+setcookie(name, value, expire, path, domain, secure, httponly);
+
+Deleting a Cookie:
+setcookie("username", "", time() - 3600, "/"); 
+
+accessing:
+$_COOKIE["username"]
+
+Parameter	Description
+name	    Cookie name (must be a string)
+value	    Cookie value (string, integer, or encoded array)
+expire	    Expiration time (in seconds, using time() + duration)
+path	    Directory where the cookie is available (/ for entire site)
+domain	    Cookie domain (example.com or subdomains)
+secure	    true → Only sent over HTTPS
+httponly	true → Not accessible by JavaScript (prevents XSS)
+
+Parameter   Default Value	        Meaning
+name	    (Required)	            The cookie name
+value	    "" (Empty String)	    No value assigned
+expire	    0	                    Expires when the browser is closed
+path	    "" (Current directory)	Available only to the current directory
+domain	    "" (Current domain)	    Cannot be shared across subdomains
+secure	    false	                Sent over both HTTP and HTTPS
+httponly	false	                Accessible by JavaScript
