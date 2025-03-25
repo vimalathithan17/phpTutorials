@@ -1,7 +1,6 @@
 <?php
 // Default theme if no cookie exists
 $defaultTheme = "burlywood";
-
 // Check if a cookie is set, else use default
 $theme = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : $defaultTheme;
 ?>
