@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+q<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,8 +9,8 @@
     <h1>Welcome to php</h1>
     <?php
     echo "hi" . "<br>" ;
-    $var=print "hello";
-
+    print "hello";
+    $var=5;
     echo "<br>" . $var;
 
     echo "<h1>hellooo</h1>";
